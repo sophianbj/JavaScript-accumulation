@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全选 隔行变色</title>
+    <style>
+        *{  margin: 0;  padding: 0;  }
+        #box{
+            width: 800px;
+            margin: 50px auto;
+        }
+        #list{
+            width: 100%;
+            border: 1px solid #bb53e8;
+            list-style: none;
+        }
+        #list li{
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 1px dashed #000;
+            cursor: pointer;
+        }
+        #list li em{
+            display: inline-block;
+            margin: 5px 10px;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            background: no-repeat 100%;
+            background-image: url("images/ck.png");
+        }
+        li:hover{
+            background-color: rgba(89, 43, 37, 0.78) !important;
+        }
+        .cked{
+            background-image: url("images/cked.jpg") !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li class="item"><em></em><span>子曰：“学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？”</span></li>
+            <li class="item"><em></em>子曰：“巧言令色，鲜矣仁！”</li>
+            <li class="item"><em></em>曾子曰：“吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？”</li>
+            <li class="item"><em></em>子曰：“君子不重，则不威；学则不固。主忠信，无友不如已者。过则勿惮改。”</li>
+            <li class="item"><em></em>子曰：“不患人之不己知，患不知人也。”</li>
+            <li class="item"><em></em>子曰：“父在，观其志；父没，观其行；三年无改于父之道，可谓孝矣。”</li>
+            <li class="item"><em></em>曾子曰：“慎终追远，民德归厚矣。”</li>
+            <li id="ck"><em></em><span>全选</span></li>
+        </ul>
+    </div>
+    <script>
+        var oItem = document.getElementsByClassName("item"),
+            oSpan = document.getElementsByTagName("em"),
+            oAllck = document.getElementById("ck"),
+            oAspan = oAllck.getElementsByTagName("span")[0],
+            arr = ["#0bf35e","#fff659","#b5abf3"],
+            oIlen = oItem.length,
+            oSlen = oSpan.length,
+            oAlen = arr.length, i,temp = 0;
+        var aCked = false;
+        for(i = 0; i < oIlen; i++){
+            oItem[i].style.backgroundColor = arr[i%oAlen];
+            oItem[i].i = i;
+            oItem[i].flag = false;
+            oItem[i].onclick = function(){
+                temp = this.i;
+                this.flag = !this.flag;
+                oSpan[temp].className = this.flag?"cked":"";
+                var flag = true;
+                for(var i = 0; i < oIlen; i++){
+                    if(!oItem[i].flag){
+                        flag = false;
+                        break;
+                    }
+                }
+                oSpan[oIlen].className = flag?"cked":"";
+                oAspan.innerHTML = flag?"全选":"不全选";
+                aCked = flag;
+            }
+        }
+        oAllck.onclick = function(){
+            aCked = !aCked;
+            oSpan[oIlen].className = aCked?"cked":"";
+            oAspan.innerHTML = aCked?"全选":"全不选";
+            for(i = 0; i < oIlen; i++){
+                oSpan[i].className = aCked?"cked":"";
+                oItem[i].flag = aCked;
+            }
+        }
+    </script>
+</body>
+</html>
