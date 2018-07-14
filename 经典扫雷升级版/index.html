@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>经典扫雷升级版原生js练习</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="page_entrance" id="game_entry">
+            <h2 class="game_theme">经典扫雷游戏</h2>
+            <div class="game_option clearfix">
+                <ul class="types fl">
+                    <li class="level">
+                        <input id="levelA" type="radio" name="level" /><label for="levelA">初级:</label>
+                        <span>10个雷（10*10平铺风格）</span>
+                    </li>
+                    <li class="level">
+                        <input id="levelB" type="radio" name="level" /><label for="levelB">中级:</label>
+                        <span>20个雷（15*15平铺风格）</span>
+                    </li>
+                    <li class="level">
+                        <input id="levelC" type="radio" name="level" /><label for="levelC">高级:</label>
+                        <span>50个雷（18*30平铺风格）</span>
+                    </li>
+                </ul>
+                <ul class="types fr">
+                    <li class="level">
+                        <input id="levelD" type="radio" name="level" /><label for="levelD">自定义:</label>
+                        <span></span>
+                    </li>
+                    <li class="item_num">
+                        <label for="num_row">行数：高度H（9-20）</label><input id="num_row" type="text" placeholder="9-20" min="9" max="20"/>
+                    </li>
+                    <li class="item_num">
+                        <label for="num_col">列数：宽度W（9-30）</label><input id="num_col" type="text" placeholder="9-30" min="9" max="30"/>
+                    </li>
+                    <li class="item_num">
+                        <label for="num_mine">雷的个数M:（10-300）</label><input id="num_mine" type="text" placeholder="10-300" min="10" max="300"/>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn_start" id="btn_start">开始游戏</div>
+        </div>
+        <div class="mine_area" id="mine_area">
+            <h3 class="mine_remain">剩余小旗子数O(∩_∩)O哈哈~: <span class="remain_num">10</span>个</h3>
+            <div class="mine_map"></div>
+        </div>
+        <div class="modality" id="modal_frame">
+            <button class="btn_close">X</button>
+            <button class="btn_quit">退出游戏</button>
+            <button class="btn_continue">再来一局</button>
+            <div class="modality_tips">不好意思，你输了，下次走运！</div>
+        </div>
+    </div>
+    <script src="mine1.js"></script>
+</body>
+</html>
