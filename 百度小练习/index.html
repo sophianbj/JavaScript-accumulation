@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>仿百度---JSONP练习</title>
+    <link rel="stylesheet" href="style/styleSheet.css" type="text/css"/>
+    <script src="./js/moveTime.js"></script>
+</head>
+<body>
+<div id="bd_wrapper">
+    <div id="bd_inner">
+        <header id="head_nav">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#" class="nav_ilk">新闻</a></li>
+                <li class="nav_item"><a href="#" class="nav_ilk">hao123</a></li>
+                <li class="nav_item"><a href="#" class="nav_ilk">地图</a></li>
+                <li class="nav_item"><a href="#" class="nav_ilk">视频</a></li>
+                <li class="nav_item"><a href="#" class="nav_ilk">贴吧</a></li>
+                <li class="nav_item"><a href="#" class="nav_ilk">学术</a></li>
+                <li class="nav_item" id="enroll">
+                    <a href="#" class="nav_ilk nav_ilk_special" id="enroll_lk">登陆</a>
+                </li>
+                <li class="nav_item" id="install">
+                    <a href="#" class="nav_ilk nav_ilk_special" id="install_lk">设置</a>
+                    <ul class="install_list">
+                        <li class="install_item txt_center"><a href="#">搜索设置</a></li>
+                        <li class="install_item txt_center"><a href="#">高级搜索</a></li>
+                        <li class="install_item txt_center"><a href="#">关闭预测</a></li>
+                        <li class="install_item txt_center"><a href="#">搜索历史</a></li>
+                    </ul>
+                </li>
+                <li class="nav_item txt_center" id="pdt_more">
+                    <a href="#" class="nav_ilk nav_ilk_special" id="pdt_more_btn">更多产品</a>
+                </li>
+            </ul>
+            <div class="pdt_more_box txt_center">
+                <a href="#" class="pdt_more_ctn">更多产品</a>
+                <div class="pdt_more_inner">
+                    <ul class="pdt_more_list">
+                        <li><a href=""><i class="mbg mbg1"></i>糯米</a></li>
+                        <li><a href=""><i class="mbg mbg2"></i>音乐</a></li>
+                        <li><a href=""><i class="mbg mbg3"></i>图片</a></li>
+                        <li><a href=""><i class="mbg mbg4"></i>知道</a></li>
+                        <li><a href=""><i class="mbg mbg5"></i>文库</a></li>
+                        <li><a href=""><i class="mbg mbg6"></i>风云榜</a></li>
+                        <li class="pdt_more_all"><a href="">全部产品>></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <article>
+            <div class="logoImg txt_center">
+                <img src="images/bd_logo1.png" alt="百度logo"/>
+            </div>
+            <form id="bd_search_wrapper" action="">
+                <div id="bd_search_box">
+                    <span id="bd_search_ipt" class="bd_search_bar bd_ipt_box">
+                        <span id="search_ipt_tip" class="search_ipt_tip">126</span>
+                        <label for="search_ipt"></label><input id="search_ipt" type="text" name="wd" autocomplete="off" autofocus/>
+                        <em id="search_ipt_img"></em>
+                    </span>
+                    <span id="bd_search_btn" class="bd_search_bar bd_btn_box">
+                        <button id="js_btn">百度一下</button>
+                    </span>
+                </div>
+                <div id="bd_upload_box">
+                    <div id="bd_upload_url">
+                        <span id="upload_url_ipt" class="bd_search_bar bd_ipt_box">
+                            <label for="url_ipt"></label><input id="url_ipt" type="text" name="wd" autocomplete="off" placeholder="在此处粘贴图片网址"/>
+                            <span class="url_tips upload_icon">请输入正确的图片网址</span>
+                        </span>
+                        <span id="upload_url_btn" class="bd_search_bar bd_btn_box">
+                            <em id="btn_icon"></em>
+                        </span>
+                    </div>
+                    <div id="bd_upload_ctn">
+                        <div class="upload_ctn_drop">
+                            <p class="upload_drop_tips">拖拽图片到这里</p>
+                            <i class="upload_drop_icon upload_icon">+</i>
+                        </div>
+                        <div class="upload_ctn_btn">
+                            <input type="file" id="upload_btn_ipt" value="上传图片"/>
+                            <i class="upload_btn_icon upload_icon"></i>
+                            <span class="upload_btn_tips">本地上传图片</span>
+                        </div>
+                        <i class="upload_close upload_icon"></i>
+                    </div>
+                </div>
+                <!--联想关键词Associative key words-->
+                <div id="ast_keywords">
+                    <div class="bd_feedback"><span>反馈</span></div>
+                </div>
+            </form>
+        </article>
+        <footer class="txt_center">
+            <div class="foot_qr_box">
+                <div class="foot_qr_img"><img src="images/zbios_efde696.png" alt="手机百度"/></div>
+                <p class="foot_qr_desc">手机百度</p>
+            </div>
+            <div class="foot_bdlk_box">
+                <p class="foot_lk_pgh1">
+                    <a href="#" class="foot_details">把百度设为主页</a>
+                    <a href="#" class="foot_details">关于百度</a>
+                    <a href="#" class="foot_details">About Baidu</a>
+                    <a href="#" class="foot_details">百度推广</a>
+                </p>
+                <p class="foot_lk_pgh2">
+                    <span class="foot_details">©2018&nbsp;Baidu&nbsp;</span>
+                    <a href="#" class="foot_details">使用百度前必读&nbsp;</a>
+                    <a href="#" class="foot_details">意见反馈&nbsp;</a>
+                    <span class="foot_details">京ICP证030173号</span>
+                    <i class="bg_icon bg_icon1">&nbsp;</i>
+                    <a href="" class="foot_details" id="record_police">京公网安备11000002000001号</a>&nbsp;
+                    <i class="bg_icon bg_icon2"></i>
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    //获取元素（输入框以及值，提示框，拍照按钮）
+    /*输入框获取到焦点边框变化，输入值时鼠标按下触发onkeydown事件获取输入内容且搜索联想关键词且呈现给我们同时提示框也输出同样的内容*/
+    //鼠标移入onmouseenter
+    var headNav = document.getElementById("head_nav"),//顶部导航栏
+        moreBtn = document.getElementById("pdt_more_btn"),//更多产品
+        moreCtn = headNav.querySelector(".pdt_more_box"),
+        jsIptTip = document.getElementById("search_ipt_tip"),//搜索框提示信息
+        jsIpt  = document.getElementById("search_ipt"),//搜索框
+        jsImg = document.getElementById("search_ipt_img"),//搜图按钮
+        jsBtn = document.getElementById("js_btn"),//百度一下 按钮
+        jsAstKWs =document.getElementById("ast_keywords"),//联想关键字的内容框
+        upload = document.getElementById("bd_upload_box"),//上传图片部分的内容框
+        uploadClose = upload.querySelector(".upload_close"),//上传图片--关闭按钮
+        uploadBtn = document.getElementById("upload_url_btn");
+        uploadIpt = document.getElementById("url_ipt");
+        uploadItip=upload.querySelector("#bd_upload_url #upload_url_ipt .url_tips");//警告信息
+        temp = 0,i = -1;
+    jsIpt.isFocus = true;
+    //创建一个ul
+    var ulist = document.createElement("ul");
+    jsIpt.parentNode.stClass = jsIpt.parentNode.className;
+    //判断鼠标点击时所在元素来确定输入框失去焦点时联想关键词的内容框的display状态
+    addEvent(document,"click",function(e){
+        jsAstKWs.style.display = "none";
+        e=e||window.event;
+        var target = e.target|| e.srcElement;
+        if(target==jsIpt){
+            jsIpt.isFocus = true;
+            var iptVal = jsIpt.value;
+            if((/^\s{0,}[\S]/g.test(iptVal))&&iptVal&&(iptVal.length>=1)) {
+                jsAstKWs.style.display = "block";
+            }
+        }
+        if(target==jsIptTip){jsIpt.focus();}
+        if(target==jsBtn){changePage(jsIpt.value);}
+    });
+    //搜索框获得焦点时若有值则显示联想关键词的内容框即display：block；
+    addEvent(jsIpt,"focus",function(){
+        this.isFocus = true;
+        var iptVal = this.value;
+        jsIpt.parentNode.className =jsIpt.parentNode.stClass+ " js_ipt_focus";
+        if((/^\s{0,}[\S]/g.test(iptVal))&&iptVal&&(iptVal.length>=1)) {
+            jsAstKWs.style.display = "block";
+        }
+    });
+    //键盘按键抬起时，具体键---对应的内容；
+    addEvent(jsIpt,"keyup",function(e){
+        e = e||window.event;
+        e.preventDefault();
+        var aLi = document.querySelectorAll("#ast_keywords li");
+        switch(e.keyCode){
+            case 38 : updown(aLi,0,aLi.length,-1,this); break;
+            case 40 : updown(aLi,aLi.length-1,-1,1,this);break;
+            case 13 : changePage(this.value);break;
+            default : addScript(this); break;
+        }
+    });
+    addEvent(jsIpt,"blur",function(){
+        var _this = this;
+        this.isFocus = false;
+        this.parentNode.className = this.parentNode.stClass;
+        addEvent(this.parentNode,"mouseenter",function(){
+            this.className =_this.isFocus?this.stClass+" js_ipt_focus":this.stClass+ " js_ipt_hover";
+        });
+        addEvent(this.parentNode,"mouseleave",function(){
+            this.className =_this.isFocus?this.stClass+" js_ipt_focus":this.stClass;
+        });
+
+    });
+    //事件委托处理每个li的点击事件
+    addEvent(ulist,"click",function(e){
+        e = e || window.event;
+        var target = e.target|| e.srcElement;
+        var aLi_val = target.innerText;
+        changePage(aLi_val);
+    });
+    //点击搜图按钮执行程序
+    addEvent(jsImg,"click",function(){
+        uploadItip.style.display = "none";
+        uploadIpt.value = "";
+        upload.style.display = "block";
+        addEvent(uploadClose,"click",function(){upload.style.display="none";});
+        addEvent(uploadBtn,"click",function(){
+            var upIptVal = uploadIpt.value;
+            var regexp1 = /^(((ht|f)tp(s?))\:\/\/)?(www.|[a-zA-Z].)[a-zA-Z0-9\-\.]+\.(com|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)(\:[0-9]+)*?(\/($|[a-zA-Z0-9\.\,\;\?\'\\\+&%\$#\=~_\-]+))*$/;
+            if(regexp1.test(upIptVal)){
+                window.open("http://image.baidu.com/n/pc_search?queryImageUrl="+upIptVal+"&uptype=urlsearch")
+            }else{
+                uploadItip.style.display = "block";
+            }
+        });
+        addEvent(uploadIpt,"focus",function(){uploadItip.style.display = "none";})
+    });
+    //更多产品显示隐藏效果
+    addEvent(moreBtn,"mouseenter",function(){
+        var maxH = document.documentElement.clientHeight;
+        var maxW = document.documentElement.clientWidth;
+        if(maxW<=810){
+            maxH = document.documentElement.clientHeight;
+        }
+        var _this = this;
+        this.style.opacity = 0;
+        moreCtn.style.display = "block";
+        move(moreCtn,{"opacity":1,"minHeight":maxH},300);
+        addEvent(moreCtn,"mouseleave",function(){
+            _this.style.opacity = 1;
+            this.style.display = "none";
+            move(this,{"opacity":0,"minHeight":0},300);
+        })
+    });
+
+    function nbj(obj){
+        var iptVal = jsIpt.value;
+        var data = obj.s;
+        var str = "";
+        var reg = new RegExp("^"+ iptVal , "i");
+        if(data.length>=5){
+            for(var i = 0; i < 4; i++){
+                if(reg.exec(data[i]) != null){
+                    str += "<li class='ast_overflow'>"+iptVal+"<b>"+ data[i].slice(iptVal.length) +"</b></li>";
+                }else{
+                    str += "<li class='ast_overflow'>"+ data[i]+"</li>";
+                }
+            }
+        }
+        ulist.innerHTML = str;
+        jsAstKWs.insertBefore(ulist,jsAstKWs.childNodes[0]);
+        if(iptVal&&(iptVal.length>=2)&&(iptVal.length<=8)&&reg.exec(data[0]) != null) {
+            if(iptVal.match(/^\d/g)){
+                jsIptTip.style.marginLeft = 28+(iptVal.length-2) * 9 + "px";
+                jsIptTip.style.maxWidth = 435-(28+(iptVal.length-2)*9)+ "px";
+            }else{
+                jsIptTip.style.marginLeft = 26 + (iptVal.length - 1) * 16 + "px";
+                jsIptTip.style.maxWidth = 435-(26+(iptVal.length-1)*16)+ "px";
+            }
+            jsIptTip.style.display = "block";
+            jsIptTip.innerHTML = data[0];
+        }else{
+            jsIptTip.style.display = "none";
+        }
+    }
+    //跳转至相应的页面
+    function changePage(val){
+        window.open("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&ch=8&tn=98012088_2_dg&wd="+val);
+    }
+    //按下键盘上的上下键时触发的执行事件
+    function updown(obj,vl,vint,signal,This) {
+        if(temp == vl){i = vint;}
+        i = i+signal;
+        obj[i].index = i;
+        obj[temp].style.backgroundColor = "#fff";
+        temp = obj[i].index;
+        obj[temp].style.backgroundColor = "#f0f0f0";
+        This.value = obj[temp].innerText;
+        jsIptTip.style.display = "none";
+    }
+    //生成script脚本以获取数据
+    function addScript(This){
+        var iptVal = This.value;
+        var script = document.createElement("script");
+        script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+iptVal+"&cb=nbj";
+        document.body.appendChild(script);
+        jsAstKWs.style.display = (iptVal&&iptVal.length)?"block":"none";
+        script.onload = function(){
+            document.body.removeChild( script );
+        };
+    }
+    //添加事件执行程序时的兼容性问题
+    function addEvent(obj,et,fn){
+        return window.addEventListener? obj.addEventListener(et,fn,false):obj.attachEvent("on"+et,fn);
+    }
+</script>
+</body>
+</html>
