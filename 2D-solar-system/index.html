@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="sophia">
+    <meta name="Keywords" content="2D,太阳系,2D太阳系,CSS,CSS3,Canvas,动态烟花">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>2D太阳系模拟</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+</head>
+<body>
+    <canvas id="stars">该浏览器不支持canvas</canvas>
+    <div id="plane-wrapper">
+        <ul id="plane-box">
+            <li class="sun"></li>
+            <li class="mercury track">
+                <div id="mercury" class="planet" title="水星"></div>
+                <div class="name">水星</div>
+            </li>
+            <li class="venus track">
+                <div id="venus" class="planet" title="金星"></div>
+                <div class="name">金星</div>
+            </li>
+            <li class="earth track">
+                <div id="earth" class="planet" title="地球"></div>
+                <div class="name">地球</div>
+            </li>
+            <li class="mars track">
+                <div id="mars" class="planet" title="火星"></div>
+                <div class="name">火星</div>
+            </li>
+            <li class="jupiter track">
+                <div id="jupiter" class="planet" title="木星"></div>
+                <div class="name">木星</div>
+            </li>
+            <li class="saturn track">
+                <div id="saturn" class="planet" title="土星"></div>
+                <div class="name">土星</div>
+            </li>
+            <li class="uranus track">
+                <div id="uranus" class="planet" title="天王星"></div>
+                <div class="name">天王星</div>
+            </li>
+            <li class="neptune track">
+                <div id="neptune" class="planet" title="海王星"></div>
+                <div class="name">海王星</div>
+            </li>
+        </ul>
+    </div>
+    <div class="title" id="mask">2D太阳系</div>
+    <div class="title" id="title">2D太阳系</div>
+    <canvas id="fireworks">您的浏览器不支持canvas！</canvas>
+    <script src="./js/main.js"></script>
+</body>
+</html>

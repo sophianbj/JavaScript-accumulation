@@ -1,0 +1,233 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html {
+    height:100%;
+    background-color:#000;
+}
+body{
+    position: relative;
+    overflow: hidden;
+}
+li{list-style-type: none;}
+#stars {
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:.9;
+}
+#fireworks {
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:.9;
+    z-index:99;
+    cursor:crosshair;
+}
+/*容器，预定1300px，用来装八大行星和太阳的盒子*/
+#plane-wrapper{
+    width:100%;
+    height:100%;
+    -webkit-perspective: 5600px;
+    -webkit-perspective-origin: -100% -100%;
+}
+#plane-box{
+    position: relative;
+    width:100%;
+    height:100%;
+    -webkit-transform-style:preserve-3d;
+    -webkit-transform: rotateX(72deg) rotateZ(15deg);
+}
+/*给每个行星的轨道添加样式*/
+.track{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    border: 2px solid #955a5a;
+    border-radius: 50%;
+    box-shadow: 0 0 14px #666;
+    -webkit-transform:translateX(-50%) translateY(-50%);
+}
+.planet{
+    position:relative;
+    left:50%;
+    top: 0;
+    -webkit-transform:translateX(-50%) translateY(-50%);
+    animation: rotationA linear 3600s infinite;
+}
+.name{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width: 66px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color:#fff;
+    opacity: .8;
+    border-radius:50%;
+    box-shadow: 0 0 15px #8b8b8b;
+    text-shadow:0 0 0 #dcdcdc,1px 1px 0 #0a0a0a,2px 2px 0 #090909,3px 3px 0 #080808,4px 4px 0 #070707,5px 5px 0 #060606;
+    -webkit-transform:translateX(-50%) translateY(50%);
+    animation: rotationB linear 3600s infinite;
+}
+.mercury .name{background-color: #46ff2c;}
+.venus .name{background-color: #9966cc;}
+.earth .name{background-color: #3b61cc;}
+.mars .name{background-color: #ecf752;}
+.jupiter .name{background-color: #ffb8b8;}
+.saturn .name{background-color: #ff7073;}
+.uranus .name{background-color: #fdfc7f;}
+.neptune .name{background-color: #b0fcf7;}
+/*太阳 2r=100px,R=0,t=0,*/
+.sun{
+    position: relative;
+    left: 50%;
+    top: 40%;
+    width: 100px;
+    height: 100px;
+    background: url("../../../images/planet-2d/sun.png") center center no-repeat;
+    -webkit-transform:translateX(-50%) translateY(-50%) ;
+}
+/*水星 2r=50px,R=150px,t=2.5s */
+.mercury{
+    width: 150px;
+    height: 150px;
+    animation: revolution linear 2.50s infinite;
+}
+#mercury{
+    width: 50px;
+    height: 50px;
+    background: url("../../../images/planet-2d/mercury.png") left top no-repeat;
+}
+/*金星 2r=60px,R=260px,t=6.4s */
+.venus{
+    width: 260px;
+    height: 260px;
+    animation: revolution linear 6.40s infinite;
+}
+#venus{
+    width: 60px;
+    height: 60px;
+    background: url("../../../images/planet-2d/venus.png") left top no-repeat;
+}
+
+/*地球 2r=60px,R=370px,t=10.40s*/
+.earth{
+    width: 370px;
+    height: 370px;
+    animation: revolution linear 10.40s infinite;
+}
+#earth{
+    width: 60px;
+    height: 60px;
+    background: url("../../../images/planet-2d/earth.png") left top no-repeat;
+}
+/*火星 2r=50px,R=480px,t=19.58s*/
+.mars{
+    width: 480px;
+    height: 480px;
+    animation: revolution linear 19.58s infinite;
+}
+#mars{
+    width: 60px;
+    height: 60px;
+    background: url("../../../images/planet-2d/mars.png") left top no-repeat;
+}
+
+/*木星 2r=50px,R=620px,t=122.78s*/
+.jupiter{
+    width: 620px;
+    height: 620px;
+    animation: revolution linear 122.78s infinite;
+}
+#jupiter{
+    width: 80px;
+    height: 80px;
+    background: url("../../../images/planet-2d/jupiter.png") left top no-repeat;
+}
+/*土星 2r1=120px 2r2=80px,R=820px,t=306.95s*/
+.saturn{
+    width: 820px;
+    height: 820px;
+    animation: revolution linear 306.95s infinite;
+}
+#saturn{
+    width: 120px;
+    height: 80px;
+    background: url("../../../images/planet-2d/saturn.png") left top no-repeat;
+}
+
+/*天王星 2r=80px,R=1020px,t=874.00s*/
+.uranus{
+    width: 1020px;
+    height: 1020px;
+    animation: revolution linear 874.00s infinite;
+}
+#uranus{
+    width: 80px;
+    height: 80px;
+    background: url("../../../images/planet-2d/uranus.png") left top no-repeat;
+}
+
+/*海王星 2r=70px,R=1190px,t=1714.72s*/
+.neptune{
+    width: 1190px;
+    height: 1190px;
+    animation: revolution linear 1714.72s infinite;
+}
+#neptune{
+    width: 70px;
+    height: 70px;
+    background: url("../../../images/planet-2d/neptune.png") left top no-repeat;
+}
+.title{
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 60px;
+    color: gold;
+    -webkit-transform:translateX(350%) translateY(-240%) rotateX(45deg) rotateZ(22deg);
+}
+#title{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    text-shadow:0 0 0 #dcdcdc,-1px -1px 0 #d0d0d0,-2px -2px 0 #c4c4c4,-3px -3px 0 #b7b7b7,-4px -4px 0 #ababab,-5px -5px 0 #9f9f9f,-6px -6px 0 #939393,-7px -7px 0 #878787,-8px -8px 0 #7b7b7b,-9px -9px 0 #6e6e6e,-10px -10px 0 #626262,-11px -11px 0 #565656,-12px -12px 0 #4a4a4a,-13px -13px 0 #3e3e3e;
+}
+#mask{
+    position: absolute;
+    background-image:-webkit-gradient(linear,400 200,0 bottom,from(rgba(255,255,0,1)),to(rgba(255,0,0,1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    z-index: 99;
+}
+/*旋转关键帧 每个轨道都调用该函数*/
+@keyframes revolution{
+    0% {
+        -webkit-transform:translateX(-50%) translateY(-50%) rotateZ(360deg)
+    }
+    100% {
+        -webkit-transform:translateX(-50%) translateY(-50%) rotateZ(0deg)
+    }
+}
+@keyframes rotationA {
+    from{
+        -webkit-transform:translateX(-50%) translateY(-50%) rotateZ(338deg)
+    }
+    to {
+        -webkit-transform:translateX(-50%) translateY(-50%) rotateZ(-22deg)
+    }
+}
+@-webkit-keyframes rotationB {
+    0% {
+        -webkit-transform:translateX(-50%) translateY(50%) rotateZ(-22deg);
+    }
+    100% {
+        -webkit-transform:translateX(-50%) translateY(50%) rotateZ(338deg);
+    }
+}
